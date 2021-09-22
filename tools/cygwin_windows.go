@@ -34,21 +34,5 @@ var (
 )
 
 func isCygwin() bool {
-	if cygwinState != cygwinStateUnknown {
-		return cygwinState.Enabled()
-	}
-
-	cmd := subprocess.ExecCommand("uname")
-	out, err := cmd.Output()
-	if err != nil {
-		return false
-	}
-
-	if bytes.Contains(out, []byte("CYGWIN")) || bytes.Contains(out, []byte("MSYS")) || bytes.Contains(out, []byte("MINGW")) {
-		cygwinState = cygwinStateEnabled
-	} else {
-		cygwinState = cygwinStateDisabled
-	}
-
-	return cygwinState.Enabled()
+	return true
 }
