@@ -4,5 +4,5 @@
 package tools
 
 func isCygwin() bool {
-	return false
+	return true
 }
